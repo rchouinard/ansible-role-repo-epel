@@ -1,0 +1,10 @@
+---
+- name: Install packages
+  package:
+    name: "{{ epel_repo_url }}"
+    state: present
+
+- name: Import GPG key
+  rpm_key:
+    key: "{{ epel_repo_gpg_key_url }}"
+    state: present
